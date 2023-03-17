@@ -155,17 +155,17 @@ class OrderableWidgetState<T> extends State<OrderableWidget<T>>
 
   bool moreThanMin(double primaryDelta) {
     if (isHorizontal) {
-      return data.x + primaryDelta > 0;
+      return data.x + primaryDelta >= 0;
     } else {
-      return data.y + primaryDelta > 0;
+      return data.y + primaryDelta >= 0;
     }
   }
 
   bool lessThanMax(double primaryDelta) {
     if (isHorizontal) {
-      return data.x + primaryDelta + widget.itemSize.width < widget.maxPos;
+      return data.x + primaryDelta + widget.itemSize.width <= widget.maxPos;
     } else {
-      return data.y + primaryDelta + widget.itemSize.height < widget.maxPos;
+      return data.y + primaryDelta + widget.itemSize.height <= widget.maxPos;
     }
   }
 
